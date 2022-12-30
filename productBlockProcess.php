@@ -11,11 +11,11 @@ if(isset($_GET["id"])){
 
         $product_data = $product_rs->fetch_assoc();
 
-        if($product_data["status"] == 1){
-            Database::iud("UPDATE `add_order` SET `status`= '2' WHERE `id`='".$pid."'");
+        if($product_data["status"] == 2){
+            Database::iud("UPDATE `add_order` SET `status`= '3' WHERE `id`='".$pid."'");
             echo ("blocked");
-        }else if($product_data["status"] == 2){
-            Database::iud("UPDATE `add_order` SET `status`= '1' WHERE `id`='".$pid."'");
+        }else if($product_data["status"] == 3){
+            Database::iud("UPDATE `add_order` SET `status`= '2' WHERE `id`='".$pid."'");
             echo ("unblocked");
         }
 

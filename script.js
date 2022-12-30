@@ -209,7 +209,7 @@ function changeBalanseStatus(id) {
             if (txt == "blocked") {
                 document.getElementById("pb" + id).innerHTML = "order Conform";
                 document.getElementById("pb" + id).classList = "btn btn-success disabled";
-                alert("success");
+                alert("unblocked");
                 window.location = "add.php";
             } else if (txt == "unblocked") {
                 document.getElementById("pb" + id).innerHTML = "order";
@@ -269,5 +269,39 @@ function sendemail(id) {
     }
 
     r.open("POST", "sendEmailProcess.php", true);
+    r.send();
+}
+
+function ordercansal(id) {
+    var r = new XMLHttpRequest();
+
+    r.onreadystatechange = function() {
+        if (r.readyState == 4) {
+            var t = r.responseText;
+            if (t == "removed") {
+                window.location.reload();
+            }
+
+        }
+    }
+
+    r.open("GET", "cansalorder.php?id=" + id, true);
+    r.send();
+}
+
+function adminorderconform(id) {
+    var r = new XMLHttpRequest();
+
+    r.onreadystatechange = function() {
+        if (r.readyState == 4) {
+            var t = r.responseText;
+            if (t == "removed") {
+                window.location.reload();
+            }
+
+        }
+    }
+
+    r.open("GET", "conformorder.php?id=" + id, true);
     r.send();
 }

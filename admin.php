@@ -105,16 +105,29 @@ if (isset($_SESSION["au"])) {
 
 
                         <?php
-                      
+                     
+                       if($selected_data["status"] == 4){
+                        ?>
+                              <a ' class="btn fw-bold mt-1 mb-1 btn-secondary">Order Delivery</a>
+                              
+                        <?php
+                       }
 
-                        if ($selected_data["status"] == 1) {
+                        elseif ($selected_data["status"] == 1) {
                         ?>
                               <a href='<?php echo "pAdminUser.php?id=" . ($selected_data["id"]); ?>' class="btn btn-success fw-bold mt-1 mb-1">Order</a>
                               
                         <?php
-                        } else {
+                        } elseif($selected_data["status"] == 2) {
                         ?>
-                          <button  class="btn btn-danger fw-bold mt-1 mb-1" >Order Cansal</button>
+                          <button  class="btn fw-bold mt-1 mb-1 btn-primary" >Admin Order Conform</button>
+                           
+                        <?php
+                        
+
+                        }else{
+                            ?>
+                          <button  class="btn btn-danger fw-bold mt-1 mb-1"  onclick='ordercansal( <?php echo $selected_data["id"]; ?>); '>Order Cansal</button>
                            
                         <?php
 

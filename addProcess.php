@@ -9,7 +9,7 @@ $daddres = $_POST["da"];
 $dtime= $_POST["dt"];
 $note = $_POST["n"];
 
-
+$length = sizeof($_FILES);
 if(empty($daddres)){
     echo ("Please Enter the Address");
 }else if(empty($dtime)){
@@ -20,15 +20,15 @@ if(empty($daddres)){
 }else{
     
    
+if($length <= 5 && $length > 0){
 
     $status = 1;
 
     Database::iud("INSERT INTO `add_order`
     (`delevery_address`,`time`,`note`,`users_email`,`status`) VALUES 
     ('".$daddres."','".$dtime."','".$note."','".$email."','".$status."')");
-
-    echo ("prescriptions. saved successfully");
-
+ echo ("Product images saved successfully");
+   
     $addorderid = Database::$connection->insert_id;
 
     $length = sizeof($_FILES);
@@ -70,14 +70,16 @@ if(empty($daddres)){
             }
         }
 
-        echo ("prescriptions image saved successfully");
+      
 
     }else{
         echo ("Invalid image count");
     }
     
     
+}else{
+    echo ("Invalid image count");
     
 }
-
-?>
+    
+}

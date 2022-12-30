@@ -175,7 +175,7 @@ if (isset($_GET["id"])) {
                                                                     <div class="row">
 
                                                                         <div class="col-3">
-                                                                            <input type="text" id="q1" name="q1" class="border-1" required>
+                                                                            <input type="number" id="q1" name="q1" class="border-1" required>
                                                                         </div>
 
 
@@ -187,7 +187,7 @@ if (isset($_GET["id"])) {
 
                                                                         </div>
                                                                         <div class="col-1">
-                                                                            <input type="text" id="m1" name="m1" class="border-1" required>
+                                                                            <input type="number" id="m1" name="m1" class="border-1" required>
 
                                                                         </div>
 
@@ -210,7 +210,7 @@ if (isset($_GET["id"])) {
                                                                     <div class="row">
 
                                                                         <div class="col-3">
-                                                                            <input type="text" id="q2" name="q2" class="border-1" required>
+                                                                            <input type="number" id="q2" name="q2" class="border-1" required>
                                                                         </div>
 
 
@@ -222,7 +222,7 @@ if (isset($_GET["id"])) {
 
                                                                         </div>
                                                                         <div class="col-1">
-                                                                            <input type="text" id="m2" name="m2" class="border-1" required>
+                                                                            <input type="number" id="m2" name="m2" class="border-1" required>
 
                                                                         </div>
 

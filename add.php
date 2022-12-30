@@ -1,4 +1,30 @@
 
+
+<?php
+
+session_start();
+require "connection.php";
+
+$email = $_SESSION["u"];
+
+
+   
+
+$user_rs = Database::search("SELECT * FROM `add_order` WHERE `users_email`='".$email['email']."'");
+$user_num = $user_rs->num_rows;
+
+if($user_num == 1){
+
+    $product_data = $user_rs->fetch_assoc();
+
+    echo ("Product conform or regect");
+   
+}else{
+
+?>
+
+
+
 <!DOCTYPE html>
 <html>
 
@@ -175,3 +201,9 @@
 </body>
 
 </html>
+
+
+<?php
+}
+    ?>
+ 
